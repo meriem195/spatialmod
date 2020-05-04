@@ -5,7 +5,7 @@ for m=[2 4 8 16 32 64 128 256 512]
     for Nt=nt
         r=[];
         for Nr=1:Nt
-            R=log2fac(Nt)-(log2fac(Nt-Nr)+log2fac(Nr)) + Nr*log2(m);%R=Log2(nCr) +Nr*Log2(m)
+            R=sum(log2(1:nt))-(sum(log2(1:(nt-i)))+sum(log2(1:i))) + i*log2(m);%R=Log2(nCr) +Nr*Log2(m)
             r = [r;R];
         end
         [k,nr]=max(r);
